@@ -1,4 +1,4 @@
-# Range utility
+# ABAP Range utility
 
 For many years, I was annoyed by the cumbersome handling of *ABAP ranges*. There were countless attempts to program a tool to simplify their use. 
 This repository is the result of my efforts. It essentially consists of the class ZCL_RANGE.
