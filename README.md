@@ -8,7 +8,7 @@ This repository is the result of my efforts. It essentially consists of the clas
     existing_range = corresponding #( zcl_range=>init( )->equals( 'A' )->get( ) ).
 
 Note that you need to convert to your range using `corresponding #(`. After that, you have a line with SIGN = 'I', OPTION = 'EQ' and low = 'A' in your range.
-There are further base methods: `greater( ), lower( ), between( )`
+There are further base methods: `greater( ), less( ), between( )`
 
 ### Working with patterns
 
