@@ -42,7 +42,14 @@ class zcl_range definition
       returning
         value(result) type self.
 
+    " for compatibility
     methods lower
+      importing
+        value         type any
+      returning
+        value(result) type self.
+
+    methods less
       importing
         value         type any
       returning
@@ -207,7 +214,7 @@ class zcl_range implementation.
     result = me.
   endmethod.
 
-  method lower.
+  method less.
     insert value #(
       sign = sign
       option =
@@ -217,6 +224,10 @@ class zcl_range implementation.
       low = conv #( value ) )
       into table result_range.
     result = me.
+  endmethod.
+  
+  method lower.
+    result = less( value ).
   endmethod.
 
   method is_with_equals.
@@ -245,4 +256,3 @@ class zcl_range implementation.
   endmethod.
 
 endclass.
-
