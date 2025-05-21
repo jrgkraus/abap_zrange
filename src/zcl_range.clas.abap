@@ -8,9 +8,9 @@ class zcl_range definition
     data result_range type range of string.
     class-methods init
       importing
-        existing_Lines type standard table optional
+        existing_lines type standard table optional
       returning
-        value(result) type self.
+        value(result)  type self.
 
     methods constructor
       importing
@@ -26,7 +26,7 @@ class zcl_range definition
 
     methods from_list
       importing
-        line type string
+        line          type string
       returning
         value(result) type self..
 
@@ -71,7 +71,7 @@ class zcl_range definition
     constants:
       include_sign type ddsign value 'I',
       exclude_sign type ddsign value 'E',
-      wildcards type char2 value '*+'.
+      wildcards    type char2 value '*+'.
     constants:
       begin of option,
         equals               type ddoption value 'EQ',
@@ -137,9 +137,9 @@ class zcl_range implementation.
       equals_single( value ).
     endif.
     result = me.
- endmethod.
+  endmethod.
 
- method equals_single.
+  method equals_single.
     insert value #(
       sign = sign
       option =
@@ -234,9 +234,12 @@ class zcl_range implementation.
 
   method from_list.
     data t type string_table.
-    split line at sy-vline into table t.
-    result = equals( t ).
+    if line is initial.
+      result = me.
+    else.
+      split line at sy-vline into table t.
+      result = equals( t ).
+    endif.
   endmethod.
 
 endclass.
-
