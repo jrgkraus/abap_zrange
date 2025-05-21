@@ -204,6 +204,7 @@ class zcl_range implementation.
           then option-greater_equal else option-greater )
       low = conv #( value ) )
       into table result_range.
+    result = me.
   endmethod.
 
   method lower.
@@ -215,6 +216,7 @@ class zcl_range implementation.
           then option-lower_equal else option-lower )
       low = conv #( value ) )
       into table result_range.
+    result = me.
   endmethod.
 
   method is_with_equals.
@@ -243,3 +245,4 @@ class zcl_range implementation.
   endmethod.
 
 endclass.
+
